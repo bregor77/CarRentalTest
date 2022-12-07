@@ -1,0 +1,37 @@
+<p style="color: green"><%= notice %></p>
+
+<%= search_form_for @q do |f| %>  
+  <%#= f.label :brand_cont, style: "display: block" %> <!-- just for test "display blocks" --->
+  <%= f.label :brand_cont %>
+  <%= f.search_field :brand_cont %><br>
+  <%#= f.submit %>
+  <%= f.label :carmodel_cont%>
+  <%= f.search_field :carmodel_cont %><br>
+  <%= f.submit %><hr />
+<% end %>
+
+Our Car Rental has <%= Car.public_count %> cars and counting!
+
+<h1>List of Cars:</h1><br>
+
+<div id="cars">
+  <% @cars.each do |car| %>        
+    <%= render car %>
+    <p>
+      <%= link_to "Show this car", car %>
+    </p><hr />
+    <% unless car.archived? %>
+      <%# <li> %>
+        <%#= link_to car.brand, car %>
+      <%# </li> %>
+    <% end %>
+  <% end %> 
+</div>
+
+<!-- Display "New Car" button if ADMIN is login - using USER ROLE -->
+<% if current_user %>
+  <% if current_user.admin? %>
+  <%# if current_user.moderator? || current_user.admin? %> <!-- working but it gives and errors in TESTS -->
+    <p><%= link_to "New car", new_car_path %></p><br>
+  <% end %>
+<% end %>

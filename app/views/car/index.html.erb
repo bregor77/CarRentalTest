@@ -1,0 +1,17 @@
+<div class="main-title text-center">
+    <br><h1>Car Rental Index Page</h1><br>
+</div>
+<hr />
+
+<%# API. Displaying weather data %>
+<div class="w-full text-center">
+    <p>Check the weather! Winter is coming!</p>
+    <p>It's a good reason to rent a car!</p>
+    <hr /><br>
+    <h5>Weather forecast for: <%= @weather.location %></h5>
+    <p><%= Date.today.strftime("%A, %B, %d") %></p>
+    <img class="mx-auto" src= "<%= @weather.icon_url %>" />
+    <p><%= @weather.status %></p>
+    <p class="text-xs"><%= @weather.description %></p>
+    <p><%= @weather.temperature %><span class="italic"> Celsius</span></p>
+</div>

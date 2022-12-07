@@ -1,0 +1,19 @@
+<hr /><% unless comment.archived? %>
+<p>
+  <strong>Customer:</strong>
+  <%= comment.customer %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+</p>
+
+<p>
+    <%= link_to "Destroy Comment", [comment.car, comment], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %>
+</p>
+
+<% end %>
