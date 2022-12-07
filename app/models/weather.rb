@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+# Weather Model for API
 class Weather
   def initialize(data)
     @data = data.with_indifferent_access

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+# Car Controller
 class CarController < ApplicationController
   def index
     # Using the API

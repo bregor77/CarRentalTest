@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+# Cars Controller
 class CarsController < ApplicationController
   http_basic_authenticate_with name: 'admin', password: '123456', only: :destroy
 
